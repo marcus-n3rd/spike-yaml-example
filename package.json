@@ -14,7 +14,7 @@
     "spike-css-standards": "^4.0.0",
     "spike-js-standards": "^2.1.0",
     "spike-optimize": "^0.1.2",
-    "spike-records": "^2.2.0",
+    "spike-records": "marcus-n3rd/spike-records#reshape-update",
     "sugarml": "^0.7.0",
     "sugarss": "^1.0.1"
   },
