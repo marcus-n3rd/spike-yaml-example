@@ -7,8 +7,14 @@ const sugarss = require('sugarss')
 const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
+const utils = require('./utils.js')
 const env = process.env.SPIKE_ENV
 const locals = {}
+
+const articles = yaml.safeLoad(fs.readFileSync('content/articles.yml', 'utf8'))
+const authors = yaml.safeLoad(fs.readFileSync('content/authors.yml', 'utf8'))
+
+locals.articleList = utils.articleList(articles, authors)
 
 module.exports = {
   devtool: 'source-map',
@@ -29,9 +35,6 @@ module.exports = {
   plugins: [
     new Records({
       addDataTo: locals,
-      articles: {
-        data: yaml.safeLoad(fs.readFileSync('content/articles.yml', 'utf8')),
-      },
     }),
   ],
 }

@@ -5,5 +5,8 @@ extends(src='layout.sgr')
 
     section
       ul
-        each(loop="article of articles")
-          li {{ article.title }} - {{ article.user }}
+        each(loop='article of articleList')
+          li
+            a(href='/article/{{ article.slug }}')
+              .article--title {{ article.title }}
+              .article--author -- {{ article.user }}
