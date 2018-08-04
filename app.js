@@ -4,6 +4,9 @@ const jsStandards = require('spike-js-standards')
 const sugarml = require('sugarml')
 const sugarss = require('sugarss')
 const env = process.env.SPIKE_ENV
+const locals = {
+  articles: [],
+}
 
 module.exports = {
   devtool: 'source-map',
@@ -11,7 +14,7 @@ module.exports = {
   ignore: ['**/layout.sgr', '**/_*', '**/.*', 'content/*', 'readme.md', 'yarn.lock', 'package-lock.json'],
   reshape: htmlStandards({
     parser: sugarml,
-    locals: (ctx) => { return { pageId: pageId(ctx), foo: 'bar' } },
+    locals: (ctx) => locals,
     minify: env === 'production'
   }),
   postcss: cssStandards({
