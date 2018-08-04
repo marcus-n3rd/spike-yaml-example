@@ -1,0 +1,8 @@
+extends(src='layout.sgr')
+  block(name='content')
+    header
+      h1 {{ item.title }}
+      .byline -- {{ item.user }}
+      .datetime {{ item.datetime }}
+
+    section {{{ item.body }}}

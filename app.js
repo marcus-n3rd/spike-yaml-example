@@ -19,7 +19,7 @@ locals.articleList = utils.articleList(articles, authors)
 module.exports = {
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'content/*', 'readme.md', 'yarn.lock', 'package-lock.json'],
+  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'content/*', 'views/templates/*.sgr', 'readme.md', 'yarn.lock', 'package-lock.json'],
   reshape: htmlStandards({
     parser: sugarml,
     locals: (ctx) => locals,
@@ -35,6 +35,13 @@ module.exports = {
   plugins: [
     new Records({
       addDataTo: locals,
+      articles: {
+        data: utils.articleRecords(articles, authors),
+        template: {
+          path: 'views/_article.sgr',
+          output: (article) => `article/${article.slug}.html`
+        }
+      },
     }),
   ],
 }
