@@ -24,12 +24,12 @@ module.exports = {
     parser: sugarml,
     locals: (ctx) => locals,
     root: path.join(__dirname, 'views'),
-    minify: env === 'production'
+    minify: env === 'production',
   }),
   postcss: cssStandards({
     parser: sugarss,
     minify: env === 'production',
-    warnForDuplicates: env !== 'production'
+    warnForDuplicates: env !== 'production',
   }),
   babel: jsStandards(),
   plugins: [
