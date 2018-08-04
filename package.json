@@ -1,0 +1,39 @@
+{
+  "name": "spike-yaml-example",
+  "description": "Example blog-style static site generated with Spike where content is loaded from yaml files.",
+  "version": "0.0.1",
+  "author": "marcus-n3rd",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": "https://github.com/marcus-n3rd/spike-yaml-example/issues",
+  "dependencies": {
+    "reshape-standard": "^3.3.0",
+    "spike-css-standards": "^4.0.0",
+    "spike-js-standards": "^2.1.0",
+    "spike-optimize": "^0.1.2",
+    "spike-page-id": "^1.1.0",
+    "spike": "^2.3.0",
+    "sugarml": "^0.7.0",
+    "sugarss": "^1.0.1"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "rimraf": "^2.6.1",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2"
+  },
+  "homepage": "https://github.com/marcus-n3rd/spike-yaml-example",
+  "main": "app.js",
+  "private": true,
+  "repository": "https://github.com/marcus-n3rd/spike-yaml-example",
+  "scripts": {
+    "lint": "standard | snazzy",
+    "precommit": "npm run lint -s",
+    "pretest": "npm run lint -s",
+    "test": "NODE_ENV=test ava",
+    "start": "spike watch",
+    "build": "spike compile",
+    "prod": "NODE_ENV=production spike compile -e production"
+  }
+}
