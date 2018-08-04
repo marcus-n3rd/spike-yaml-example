@@ -8,12 +8,13 @@
   },
   "bugs": "https://github.com/marcus-n3rd/spike-yaml-example/issues",
   "dependencies": {
+    "js-yaml": "^3.12.0",
     "reshape-standard": "^3.3.0",
+    "spike": "^2.3.0",
     "spike-css-standards": "^4.0.0",
     "spike-js-standards": "^2.1.0",
     "spike-optimize": "^0.1.2",
-    "spike-page-id": "^1.1.0",
-    "spike": "^2.3.0",
+    "spike-records": "^2.2.0",
     "sugarml": "^0.7.0",
     "sugarss": "^1.0.1"
   },
