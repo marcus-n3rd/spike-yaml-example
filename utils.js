@@ -16,11 +16,11 @@ module.exports.articleList = (articles, authors) => {
 }
 
 module.exports.slugAuthor = (author) => {
-  return `${author.first.toLowerCase()}-${author.last.toLowerCase()}`
+  return `${author.first.toLowerCase()}-${author.last.toLowerCase()}`.replace(/\s+/g, '-')
 }
 
 module.exports.slugArticle = (article) => {
-  return article.title.toLowerCase().replace(' ', '-')
+  return article.title.toLowerCase().replace(/\s+/g, '-')
 }
 
 module.exports.articleRecords = (articles, authors) => {
