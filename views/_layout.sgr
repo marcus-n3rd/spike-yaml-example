@@ -8,7 +8,12 @@ html
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
     block(name='title')
-      title {{ item.title}} | Spike YAML Example
+      if(condition='item.type === "article"')
+        title {{ item.title }} | Spike YAML Example
+      if(condition='item.type === "author"')
+        title {{ `${item.first} ${item.last}` }} | Spike YAML Example
+      else
+        title Spike YAML Example
 
     link(rel='stylesheet' href='../css/index.css')
 
