@@ -1,11 +1,11 @@
 567:
   datetime: 2018-08-04T16:31:52Z
-  user: 303
+  author: 303
   title: Some New Article
   body: article-567.md
 
 550:
   datetime: 2018-08-01T20:01:26Z
-  user: 123
+  author: 123
   title: The Importance of Accuracy in Accountancy
   body: article-550.md

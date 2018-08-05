@@ -6,10 +6,10 @@ module.exports.articleList = (articles, authors) => {
   const ret = []
   for (const artId in articles) {
     const article = articles[artId]
-    const author = authors[article.user]
-    ret.push({
+    const author = authors[article.author]
+    ret.unshift({
       title: article.title,
-      user: `${author.last}, ${author.first}`,
+      author: `${author.last}, ${author.first}`,
       slug: module.exports.slugArticle(article),
       datetime: article.datetime,
     })
@@ -29,11 +29,11 @@ module.exports.articleRecords = (articles, authors) => {
   const ret = []
   for (const artId in articles) {
     const article = articles[artId]
-    const author = authors[article.user]
-    ret.push({
+    const author = authors[article.author]
+    ret.unshift({
       type: 'article',
       title: article.title,
-      user: `${author.last}, ${author.first}`,
+      author,
       slug: module.exports.slugArticle(article),
       datetime: article.datetime,
       body: fs.readFileSync(`content/${article.body}`, 'utf8'),
