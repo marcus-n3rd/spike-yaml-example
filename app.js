@@ -15,6 +15,7 @@ const articles = yaml.safeLoad(fs.readFileSync('content/articles.yml', 'utf8'))
 const authors = yaml.safeLoad(fs.readFileSync('content/authors.yml', 'utf8'))
 
 locals.articleList = utils.articleList(articles, authors)
+locals.authorList = utils.authorList(authors)
 
 module.exports = {
   devtool: 'source-map',
@@ -40,6 +41,13 @@ module.exports = {
         template: {
           path: 'views/_article.sgr',
           output: (article) => `article/${article.slug}.html`
+        }
+      },
+      authors: {
+        data: locals.authorList,
+        template: {
+          path: 'views/_author.sgr',
+          output: (author) => `author/${author.slug}.html`
         }
       },
     }),

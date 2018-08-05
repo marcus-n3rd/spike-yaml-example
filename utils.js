@@ -40,3 +40,15 @@ module.exports.articleRecords = (articles, authors) => {
   }
   return ret
 }
+
+module.exports.authorList = (authors) => {
+  const ret = []
+  for (const authorId in authors) {
+    const author = authors[authorId]
+    ret.push(Object.assign({}, author, {
+      fullname: `${author.first} ${author.last}`,
+      slug: module.exports.slugAuthor(author),
+    }))
+  }
+  return ret
+}

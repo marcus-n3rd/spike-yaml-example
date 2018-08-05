@@ -3,10 +3,22 @@ extends(src='layout.sgr')
     header
       h1 Spike YAML Example
 
-    section
+    section.articles
+      h2 Recent Articles
       ul
         each(loop='article of articleList')
           li
             a(href='/article/{{ article.slug }}')
-              .article--title {{ article.title }}
-              .article--author -- {{ article.user }}
+              h3 {{ article.title }}
+            .author -- {{ article.author }}
+            .datetime {{ article.datetime }}
+            .summary {{ article.summary }}
+
+    section.authors
+      h2 Our Writers
+      ul
+        each(loop='author of authorList')
+          li
+            a(href='/author/{{ author.slug }}')
+              h3 {{ author.fullname }}
+            .info {{ author.occupation }}, {{ author.age }}

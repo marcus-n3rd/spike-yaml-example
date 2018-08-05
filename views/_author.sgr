@@ -1,0 +1,8 @@
+extends(src='_layout.sgr')
+
+  block(name='header')
+    h1 {{ item.fullname }}
+    
+  block(name='content')
+    .age Age: {{ item.age }}
+    .occupation Occupation: {{ item.occupation }}
