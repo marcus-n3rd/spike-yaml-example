@@ -13,9 +13,15 @@ html
     link(rel='stylesheet' href='../css/index.css')
 
   body
-    main(role='main')
+    header(role='header')
       a(href='/') Home
+      block(name='header')
+
+    main(role='main')
       block(name='content')
+
+    footer(role='footer')
+      block(name='footer')
 
     block(name='javascript')
       script(src='js/main.js' defer)
