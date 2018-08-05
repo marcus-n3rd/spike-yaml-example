@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 module.exports = {}
 
 module.exports.articleList = (articles, authors) => {
@@ -33,7 +35,7 @@ module.exports.articleRecords = (articles, authors) => {
       user: `${author.last}, ${author.first}`,
       slug: module.exports.slugArticle(article),
       datetime: article.datetime,
-      body: article.body,
+      body: fs.readFileSync(`content/${article.body}`, 'utf8'),
     })
   }
   return ret
