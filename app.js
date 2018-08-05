@@ -8,7 +8,7 @@ const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
 const utils = require('./utils.js')
-const env = process.env.SPIKE_ENV
+const env = process.env.NODE_ENV
 const locals = {}
 
 const articles = yaml.safeLoad(fs.readFileSync('content/articles.yml', 'utf8'))
@@ -19,7 +19,7 @@ locals.articleList = utils.articleList(articles, authors)
 module.exports = {
   devtool: 'source-map',
   matchers: { html: '*(**/)*.sgr', css: '*(**/)*.sss' },
-  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'content/*', 'views/templates/*.sgr', 'readme.md', 'yarn.lock', 'package-lock.json'],
+  ignore: ['**/layout.sgr', '**/_*', '**/.*', 'content/*', 'views/templates/*.sgr', 'README.md', 'yarn.lock', 'package-lock.json'],
   reshape: htmlStandards({
     parser: sugarml,
     locals: (ctx) => locals,
