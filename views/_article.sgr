@@ -5,4 +5,4 @@ extends(src='layout.sgr')
       .byline -- {{ item.user }}
       .datetime {{ item.datetime }}
 
-    section {{{ item.body }}}
+    section(md) {{{ item.body }}}
