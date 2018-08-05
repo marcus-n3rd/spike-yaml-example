@@ -7,3 +7,9 @@ extends(src='_layout.sgr')
 
   block(name='content')
     section(md) {{{ item.body }}}
+
+  block(name='footer')
+    h2 About the Author
+    h3 {{ `${item.author.first} ${item.author.last}` }}
+    .age Age: {{ item.author.age }}
+    .occupation Occupation: {{ item.author.occupation }}
