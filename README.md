@@ -1,6 +1,6 @@
-# spike-yaml-example
+# Spike YAML Example
 
-Example blog-style static site generated with Spike where content is loaded from yaml files.
+Example blog-style static site generated with Spike where content is loaded from yaml and markdown files.
 
 ## Setup
 
@@ -11,6 +11,8 @@ Example blog-style static site generated with Spike where content is loaded from
 - run `spike watch` or `spike compile`
 
 ## Testing
+
 Tests are located in `test/**` and are powered by [ava](https://github.com/sindresorhus/ava)
+
 - `npm install` to ensure devDeps are installed
 - `npm test` to run test suite

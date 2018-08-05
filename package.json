@@ -1,6 +1,6 @@
 {
   "name": "spike-yaml-example",
-  "description": "Example blog-style static site generated with Spike where content is loaded from yaml files.",
+  "description": "Example blog-style static site generated with Spike where content is loaded from yaml and markdown files.",
   "version": "0.0.1",
   "author": "marcus-n3rd",
   "ava": {
