@@ -12,7 +12,7 @@ html
 
     link(rel='stylesheet' href='../css/index.css')
 
-  body
+  body(class='{{ item.type }}')
     header(role='header')
       a(href='/') Home
       block(name='header')
