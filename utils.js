@@ -18,7 +18,7 @@ module.exports.articleList = (articles, authors) => {
 }
 
 module.exports.slugAuthor = (author) => {
-  return `${author.first.toLowerCase()}-${author.last.toLowerCase()}`.replace(/\s+/g, '-')
+  return `${author.last.toLowerCase()}-${author.first.toLowerCase()}`.replace(/\s+/g, '-')
 }
 
 module.exports.slugArticle = (article) => {
