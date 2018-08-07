@@ -56,3 +56,17 @@ module.exports.authorList = (authors) => {
   }
   return ret
 }
+
+module.exports.authorRecords = (authors) => {
+  const ret = []
+  for (const authorId in authors) {
+    const author = authors[authorId]
+    ret.push(Object.assign({}, author, {
+      type: 'author',
+      fullname: `${author.first} ${author.last}`,
+      slug: module.exports.slugAuthor(author),
+      bio: fs.readFileSync(`content/${author.bio}`, 'utf8'),
+    }))
+  }
+  return ret
+}
