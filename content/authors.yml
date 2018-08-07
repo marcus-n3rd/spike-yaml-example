@@ -3,13 +3,18 @@
   last: Powell
   occupation: Accountant
   age: 32
+  bio: author-bio-123.md
+
 303:
   first: Charles
   last: Reid
   occupation: Blogger
   age: 23
+  bio: author-bio-303.md
+
 426:
   first: Aimee
   last: Miller
   occupation: Student Intern
   age: 20
+  bio: author-bio-426.md
