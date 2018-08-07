@@ -44,7 +44,7 @@ module.exports = {
         }
       },
       authors: {
-        data: locals.authorList,
+        data: utils.authorRecords(authors),
         template: {
           path: 'views/_author.sgr',
           output: (author) => `author/${author.slug}.html`
