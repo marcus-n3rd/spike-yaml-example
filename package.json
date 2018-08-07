@@ -9,6 +9,7 @@
   "bugs": "https://github.com/marcus-n3rd/spike-yaml-example/issues",
   "dependencies": {
     "js-yaml": "^3.12.0",
+    "moment-timezone": "^0.5.21",
     "reshape-standard": "^3.3.0",
     "spike": "^2.3.0",
     "spike-css-standards": "^4.0.0",
