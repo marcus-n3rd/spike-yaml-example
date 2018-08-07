@@ -1,4 +1,5 @@
 const fs = require('fs')
+const moment = require('moment-timezone')
 
 module.exports = {}
 
@@ -8,11 +9,12 @@ module.exports.articleList = (articles, authors) => {
     const article = articles[artId]
     const author = authors[article.author]
     const body = fs.readFileSync(`content/${article.body}`, 'utf8')
+    const publishTime = moment(article.datetime).tz('America/Denver')
     ret.unshift({
       title: article.title,
       author: `${author.last}, ${author.first}`,
       slug: module.exports.slugArticle(article),
-      datetime: article.datetime,
+      datetime: publishTime.format('llll zz'),
       summary: body.split(/\n/, 1)[0],
     })
   }
@@ -32,12 +34,13 @@ module.exports.articleRecords = (articles, authors) => {
   for (const artId in articles) {
     const article = articles[artId]
     const author = authors[article.author]
+    const publishTime = moment(article.datetime).tz('America/Denver')
     ret.unshift({
       type: 'article',
       title: article.title,
       author,
       slug: module.exports.slugArticle(article),
-      datetime: article.datetime,
+      datetime: publishTime.format('LLLL zz'),
       body: fs.readFileSync(`content/${article.body}`, 'utf8'),
     })
   }
